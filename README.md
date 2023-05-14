@@ -1,6 +1,6 @@
 # Sublime Text - eazyBI MDX Syntax Highlighting
 
-This repository contains a Sublime Text syntax highlighting file specifically for the eazyBI variant of the Multidimensional Expressions (MDX) language. This is not to be confused with [MDX (Markdown + JSX)](https://mdxjs.com/), a completely different language used for seamlessly writing JSX in Markdown documents.
+This repository contains a Sublime Text syntax highlighting file specifically for the eazyBI variant of the [Multidimensional Expressions (MDX) query language](https://mondrian.pentaho.com/documentation/mdx.php). This is not to be confused with [MDX (Markdown + JSX)](https://mdxjs.com/), a completely different language used for seamlessly writing JSX in Markdown documents.
 
 MDX is a language for defining and manipulating multidimensional data, which is widely used in Business Intelligence tools. It allows querying and manipulating multidimensional data cubes in a more human-readable format. eazyBI has specific additional MDX functions which are not available in the standard Mondrian OLAP engine, and some general MDX functions may be missing.
 
