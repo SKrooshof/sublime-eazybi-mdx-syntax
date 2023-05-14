@@ -1,0 +1,1 @@
+# sublime-mdx-syntax
