@@ -1,0 +1,26 @@
+%YAML 1.2
+---
+name: MDX
+file_extensions:
+  - mdx
+scope: source.mdx
+contexts:
+  main:
+    - match: '--.*$'
+      scope: comment.line.double-dash.mdx
+    - match: '\b(SELECT|FROM|WHERE|ON|CASE|WHEN|THEN|ELSE|END|WITH|AS|MEMBER|SET|AXIS|NON EMPTY|EMPTY)\b'
+      scope: keyword.control.mdx
+    - match: '[\[\]]'
+      scope: punctuation.definition.brackets.mdx
+    - match: '\b([0-9]+(\.[0-9]+)?|NULL)\b'
+      scope: constant.numeric.mdx
+    - match: '"[^"]*"'
+      scope: string.quoted.double.mdx
+    - match: '\b[A-Za-z_][A-Za-z_0-9]*\b'
+      scope: identifier.mdx
+    - match: '\b(DateAdd|DateAddDays|DateAddWorkdays|DateParse|DateSerial|DateToTimestamp|DateWithoutTime|getDate|NextStartDate|Now|StartDate|TimestampToDate|CurrentHierarchy|Hierarchy|Dimension|Dimensions|AnyDateInPeriod|Case|DateAfterPeriodEnd|DateBeforePeriodEnd|DateBetween|DateBetween|getBoolean|IIf|Ancestor|ClosingPeriod|CurrentDateMember|CurrentHierarchyMember|CurrentMember|CurrentUser|CurrentUserEmail|CurrentUserName|DataMember|DateMember|DateMembersBetween|DefaultMember|FirstChild|FirstSibling|GetLinkedMember|GetLinkedMembers|GetLinkedMemberName|GetLinkedMemberNames|GetMemberByKey|GetMembersByKeys|GetMemberNameByKey|GetMemberNamesByKeys|Item|Lag|LastChild|LastSibling|Lead|Members|NextMember|OpeningPeriod|ParallelPeriod|Parent|PrevMember|PreviousPeriods|StrToMember|Abs|Aggregate|Avg|CoalesceEmpty|ConstantColumnValue|ConstantValue|Correlation|Count|Covariance|CovarianceN|CumulativeSum|DateCompare|DateDiffDays|DateDiffWorkdays|DateDiffHours|DateDiffMinutes|DateDiffWorkhours|FirstQ|getNumber|Int|Len|LinRegIntercept|LinRegPoint|LinRegR2|LinRegSlope|Max|Median|Min|NonZero|Ordinal|Percentile|Power|PreviousRowValue|Rank|Round|SparklineData|Stddev|StddevP|Stdev|StdevP|Sum|ThirdQ|Val|Value|Var|VarP|Variance|VarianceP|AddCalculatedMembers|AllMembers|Ascendants|BottomCount|BottomPercent|BottomSum|Cache|CascadingChildrenSet|Children|ChildrenSet|Crossjoin|Descendants|DescendantsSet|Distinct|DrilldownLevel|DrilldownLevelBottom|DrilldownLevelTop|DrilldownMember|Except|Exists|Extract|Filter|Generate|Head|Hierarchize|Intersect|LastPeriods|Members|Mtd|NonEmptyCrossJoin|Order|PeriodsToDate|Qtd|Siblings|StrToSet|StripCalculatedMembers|Subset|Tail|ToggleDrillState|TopCount|TopPercent|TopSum|Union|Unorder|VisibleColumnsSet|VisibleRowsSet|VisualTotals|Wtd|Ytd|AllProperties|CoalesceEmpty|ExtractString|Format|Generate|get|GetCaption|getProperty|getString|GetMemberNameByKey|GetMemberNamesByKeys|IIF|Instr|LCase|LTrim|Left|Mid|Name|NonEmptyString|Properties|RTrim|Replace|Right|SetToStr|Str|Titleize|Trim|TupleToStr|UCase|UniqueName|Current|DefaultContext|Item|StrToTuple|tuple)\b'
+      scope: support.function.mdx
+    - match: '\b(CAST|IS|MATCHES)\b'
+      scope: keyword.operator.mdx
+    - match: '(\+|-|\*|/|=|\|\||\{|\})'
+      scope: keyword.operator.mdx
