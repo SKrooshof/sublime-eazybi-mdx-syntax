@@ -10,13 +10,13 @@ This syntax highlighting is specifically tailored to the MDX functions available
 
 ## Installation
 
-1. Download the `eazyBI_MDX.sublime-syntax` file from this repository.
+1. Download the `MDX.sublime-syntax` file from this repository.
 2. Open Sublime Text and click on `Preferences > Browse Packages`. This will open the Sublime Text packages directory.
-3. Copy the downloaded `eazyBI_MDX.sublime-syntax` file into the appropriate directory:
+3. Copy the downloaded `MDX.sublime-syntax` file into the appropriate directory:
 
-    - On MacOS: `/Users/{username}/Library/Application Support/Sublime Text 3/Packages/MDX`
-    - On Windows: `C:\Users\{username}\AppData\Roaming\Sublime Text 3\Packages\MDX`
-    - On Linux: `~/.config/sublime-text-3/Packages/MDX`
+    - On MacOS: `/Users/{username}/Library/Application Support/Sublime Text 3/Packages/User/`
+    - On Windows: `C:\Users\{username}\AppData\Roaming\Sublime Text 3\Packages\User\`
+    - On Linux: `~/.config/sublime-text-3/Packages/User/`
    
    Be sure to replace `{username}` with your actual username on your system.
 
