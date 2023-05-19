@@ -20,7 +20,7 @@ contexts:
       scope: support.function.mdx
     - match: '(\+|-|\*|/|=|\|\||\{|\})'
       scope: keyword.operator.mdx
-    - match: '\b(AND|OR)\b'
+    - match: '\b(AND|OR|NOT)\b'
       scope: keyword.operator.mdx
     - match: '\b[A-Za-z_][A-Za-z_0-9]*\b'
       scope: identifier.mdx
