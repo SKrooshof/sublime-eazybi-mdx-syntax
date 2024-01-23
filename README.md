@@ -10,6 +10,19 @@ This syntax highlighting is specifically tailored to the MDX functions available
 
 ## Installation
 
+### Package Control (Recommended)
+Package Control is a package manager for Sublime Text 2 & 3. If you don't already have it installed, follow the [installation instructions here](https://sublime.wbond.net/installation).
+
+Once Package Control is installed, restart Sublime and follow these steps:
+
+1. Open the Command Pallette (`cmd + shift + p` on OS X / Linux or `ctrl + shift + p` on Windows).
+2. Type "install" and select `Package Control: Install Package`.
+3. Type "eazyBI MDX" and press Enter.
+4. Restart Sublime Text. 
+
+After following these steps, Sublime Text should automatically use eazyBI MDX syntax highlighting for files with the `.mdx` extension.
+
+### Manually
 1. Download the `MDX.sublime-syntax` file from this repository.
 2. Open Sublime Text and click on `Preferences > Browse Packages`. This will open the Sublime Text packages directory.
 3. Copy the downloaded `MDX.sublime-syntax` file into the appropriate directory:
