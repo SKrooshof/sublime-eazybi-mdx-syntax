@@ -2,7 +2,7 @@
 
 This repository contains a Sublime Text syntax highlighting file specifically for the eazyBI variant of the [Multidimensional Expressions (MDX) query language](https://mondrian.pentaho.com/documentation/mdx.php). This is not to be confused with [MDX (Markdown + JSX)](https://mdxjs.com/), a completely different language used for seamlessly writing JSX in Markdown documents.
 
-MDX is a language for defining and manipulating multidimensional data, which is widely used in Business Intelligence tools. It allows querying and manipulating multidimensional data cubes in a more human-readable format. eazyBI has specific additional MDX functions which are not available in the standard Mondrian OLAP engine, and some general MDX functions may be missing.
+MDX is a language for defining and manipulating multidimensional data widely used in Business Intelligence tools. It allows querying and manipulating multidimensional data cubes in a more human-readable format. eazyBI has specific additional MDX functions that are unavailable in the standard Mondrian OLAP engine, and some general MDX functions may be missing.
 
 This syntax highlighting is specifically tailored to the MDX functions available in [eazyBI](https://docs.eazybi.com/eazybi/analyze-and-visualize/calculated-measures-and-members/mdx-function-reference).
 
@@ -11,7 +11,7 @@ This syntax highlighting is specifically tailored to the MDX functions available
 ## Installation
 
 ### Package Control (Recommended)
-Package Control is a package manager for Sublime Text 2 & 3. If you don't already have it installed, follow the [installation instructions here](https://sublime.wbond.net/installation).
+Package Control is a package manager for Sublime Text. If you don't already have it installed, follow the [installation instructions here](https://sublime.wbond.net/installation).
 
 Once Package Control is installed, restart Sublime and follow these steps:
 
