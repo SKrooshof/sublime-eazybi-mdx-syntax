@@ -1,0 +1,17 @@
+-- Count issues created during the selected time period.
+
+/*
+  Block comments can span multiple lines.
+  Function names inside comments stay comment-colored.
+  Sum([Measures].[Issues created])
+*/
+Sum(
+  Filter(
+    Descendants([Issue].CurrentHierarchyMember, [Issue].[Issue]),
+    DateInPeriod(
+      [Issue].CurrentHierarchyMember.get('Created at'),
+      [Time].CurrentHierarchyMember
+    )
+  ),
+  /* Count matching issues. */ [Measures].[Issues created]
+)

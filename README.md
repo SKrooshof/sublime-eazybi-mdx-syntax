@@ -1,46 +1,62 @@
-# Sublime Text - eazyBI MDX Syntax Highlighting
+# eazyBI MDX for Sublime Text
 
-This repository contains a Sublime Text syntax highlighting file specifically for the eazyBI variant of the [Multidimensional Expressions (MDX) query language](https://mondrian.pentaho.com/documentation/mdx.php). This is not to be confused with [MDX (Markdown + JSX)](https://mdxjs.com/), a completely different language used for seamlessly writing JSX in Markdown documents.
+Syntax highlighting for eazyBI calculated measures and members in Sublime Text.
+This package supports **Multidimensional Expressions (MDX)**, the language used to query OLAP cubes. For the supported eazyBI functions, see the [MDX function reference](https://docs.eazybi.com/eazybi/analyze-and-visualize/calculated-measures-and-members/mdx-function-reference). [Markdown + JSX](https://mdxjs.com/) is a different language that also uses the `.mdx` extension.
 
-MDX is a language for defining and manipulating multidimensional data widely used in Business Intelligence tools. It allows querying and manipulating multidimensional data cubes in a more human-readable format. eazyBI has specific additional MDX functions that are unavailable in the standard Mondrian OLAP engine, and some general MDX functions may be missing.
+## Highlighting
 
-This syntax highlighting is specifically tailored to the MDX functions available in [eazyBI](https://docs.eazybi.com/eazybi/analyze-and-visualize/calculated-measures-and-members/mdx-function-reference).
+- eazyBI and MDX functions, including `Sum`, `Filter`, `CatchException`, `DateInPeriod`, and `Cast`.
+- Control keywords such as `CASE`, `WHEN`, `THEN`, `ELSE`, and `END`.
+- Identifiers, brackets, numbers, quoted strings, and arithmetic and logical operators.
+- `--` line comments and inline or multiline `/* ... */` block comments.
 
-![Example](./example.png)
+Tested with **Sublime Text 4215**, including 23 block-comment regression assertions and a visual check. Colors depend on your selected color scheme.
+
+![eazyBI MDX in Sublime Text, showing functions, strings, and line and block comments](example.png)
+
+The screenshot uses [example.mdx](example.mdx), a calculated-measure example for an eazyBI Jira cube.
 
 ## Installation
 
-### Package Control (Recommended)
-Package Control is a package manager for Sublime Text. If you don't already have it installed, follow the [installation instructions here](https://sublime.wbond.net/installation).
+### Package Control (recommended)
 
-Once Package Control is installed, restart Sublime and follow these steps:
+If needed, [install Package Control](https://packagecontrol.io/installation) first.
 
-1. Open the Command Pallette (`cmd + shift + p` on OS X / Linux or `ctrl + shift + p` on Windows).
-2. Type "install" and select `Package Control: Install Package`.
-3. Type "eazyBI MDX" and press Enter.
-4. Restart Sublime Text. 
+1. Open the Command Palette: `Cmd+Shift+P` on macOS, or `Ctrl+Shift+P` on Windows and Linux.
+2. Select `Package Control: Install Package`.
+3. Search for **eazyBI MDX** and select it.
+4. Open a `.mdx` file. The syntax name is **MDX**; if another package handles this extension, choose `View > Syntax > MDX`.
 
-After following these steps, Sublime Text should automatically use eazyBI MDX syntax highlighting for files with the `.mdx` extension.
+### Manual installation
 
-### Manually
-1. Download the `MDX.sublime-syntax` file from this repository.
-2. Open Sublime Text and click on `Preferences > Browse Packages`. This will open the Sublime Text packages directory.
-3. Copy the downloaded `MDX.sublime-syntax` file into the appropriate directory:
+1. Download [MDX.sublime-syntax](MDX.sublime-syntax).
+2. In Sublime Text, choose `Preferences > Browse Packages`.
+3. Create a folder named `eazyBI MDX` there and put `MDX.sublime-syntax` inside it.
+4. Open a `.mdx` file and select `View > Syntax > MDX` if needed.
 
-    - On MacOS: `/Users/{username}/Library/Application Support/Sublime Text 3/Packages/User/`
-    - On Windows: `C:\Users\{username}\AppData\Roaming\Sublime Text 3\Packages\User\`
-    - On Linux: `~/.config/sublime-text-3/Packages/User/`
-   
-   Be sure to replace `{username}` with your actual username on your system.
-
-4. Restart Sublime Text.
-
-After following these steps, Sublime Text should automatically use eazyBI MDX syntax highlighting for files with the `.mdx` extension.
+A manual `eazyBI MDX` folder takes precedence over the Package Control version. Remove that folder when you want to use Package Control updates again.
 
 ## Contributing
 
-Contributions to improve this syntax highlighting template are very welcome. Feel free to open an issue or submit a pull request.
+[Open an issue](https://github.com/SKrooshof/sublime-eazybi-mdx-syntax/issues) or submit a pull request. For a highlighting bug, include:
+
+- Your Sublime Text build, operating system, and eazyBI MDX package version.
+- A minimal MDX example that reproduces the problem.
+- The expected highlighting and what you see instead; a screenshot can help.
+- Confirmation that the active syntax is **MDX**.
+
+### Run the syntax tests
+
+1. Choose `Preferences > Browse Packages` and create or open the `eazyBI MDX` folder.
+2. Copy `MDX.sublime-syntax` and `syntax_test_comments.mdx` from your checkout into that folder.
+3. Open the copied `syntax_test_comments.mdx` in Sublime Text.
+4. Choose `Tools > Build System > Syntax Tests`, then `Tools > Build` (`Cmd+B` on macOS; `Ctrl+B` on Windows and Linux).
+5. Check the output panel for passing results. The current block-comment fixture contains **23 assertions**.
+
+Keep the folder name exactly `eazyBI MDX`: the test header references `Packages/eazyBI MDX/MDX.sublime-syntax`. After editing the syntax or fixture, update the copies before rerunning the tests. See [Sublime Text's syntax-test documentation](https://www.sublimetext.com/docs/syntax.html#testing) for the assertion format.
+
+Open `example.mdx` for a visual check as well: line and block comments should use comment colors, quoted text should use string colors, and highlighting should resume after `*/`.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+[MIT](LICENSE).
