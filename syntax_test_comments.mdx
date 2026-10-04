@@ -1,0 +1,50 @@
+-- SYNTAX TEST "Packages/eazyBI MDX/MDX.sublime-syntax"
+
+   /* block comment */ Sum([Time].CurrentMember)
+-- ^^ comment.block.mdx punctuation.definition.comment.begin.mdx
+--    ^^^^^^^^^^^^^ comment.block.mdx - identifier - support.function
+--                  ^^ comment.block.mdx punctuation.definition.comment.end.mdx
+--                     ^^^ support.function.mdx - comment
+
+   /*
+-- ^^ comment.block.mdx punctuation.definition.comment.begin.mdx
+
+   Sum([Time].CurrentMember) -- still a block comment
+-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.block.mdx - support.function - comment.line
+
+   */ Sum([Time].CurrentMember)
+-- ^^ comment.block.mdx punctuation.definition.comment.end.mdx
+--    ^^^ support.function.mdx - comment
+
+   Sum([Time].CurrentMember)
+-- ^^^ support.function.mdx - comment
+
+   /**/ /* second */ Sum([Time].CurrentMember)
+-- ^^^^ comment.block.mdx
+--         ^^^^^^ comment.block.mdx
+--                   ^^^ support.function.mdx - comment
+
+   -- /* line comment */
+--    ^^^^^^^^^^^^^^^^^^ comment.line.double-dash.mdx - comment.block
+
+   Sum([Time].CurrentMember)
+-- ^^^ support.function.mdx - comment
+
+   "/* string */" Sum([Time].CurrentMember)
+-- ^^^^^^^^^^^^^^ string.quoted.double.mdx - comment
+--                ^^^ support.function.mdx - comment
+
+   '/* string */' Sum([Time].CurrentMember)
+-- ^^^^^^^^^^^^^^ string.quoted.single.mdx - comment
+--                ^^^ support.function.mdx - comment
+
+   /* "quoted" -- Sum([Time].CurrentMember) */ Sum([Time].CurrentMember)
+--    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.block.mdx - string - support.function
+--                                          ^^ comment.block.mdx punctuation.definition.comment.end.mdx
+--                                             ^^^ support.function.mdx - comment
+
+   /* unterminated
+--    ^^^^^^^^^^^^ comment.block.mdx
+
+   Sum([Time].CurrentMember)
+-- ^^^^^^^^^^^^^^^^^^^^^^^^^ comment.block.mdx - support.function

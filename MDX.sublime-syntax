@@ -8,6 +8,9 @@ contexts:
   main:
     - match: '--.*$'
       scope: comment.line.double-dash.mdx
+    - match: '/\*'
+      scope: punctuation.definition.comment.begin.mdx
+      push: block-comment
     - match: '\b(CASE|WHEN|THEN|ELSE|END|AS|MATCHES|CAST|IS|EMPTY|DISTINCT|EXISTING)\b'
       scope: keyword.control.mdx
     - match: '[\[\]]'
@@ -28,3 +31,9 @@ contexts:
       scope: string.quoted.single.mdx
     - match: "\".*?\""
       scope: string.quoted.single.mdx
+
+  block-comment:
+    - meta_scope: comment.block.mdx
+    - match: '\*/'
+      scope: punctuation.definition.comment.end.mdx
+      pop: true
